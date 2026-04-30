@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="screen_padding">10dp</dimen>
+    <dimen name="base_gap_btw_text">5dp</dimen>
+    <dimen name="base_gap_btw_items">10dp</dimen>
+
+    <dimen name="shopping_item_img_size">60dp</dimen>
+    <dimen name="shopping_summary_radius">20dp</dimen>
+    <dimen name="shopping_summary_height">45dp</dimen>
+
+    <dimen name="cart_btn_margin">15dp</dimen>
+    <dimen name="cart_back_btn_size">24dp</dimen>
+    <dimen name="cart_edit_btn_size">24dp</dimen>
+
+    <dimen name="text_primary">15sp</dimen>
+    <dimen name="text_secondary">12sp</dimen>
+    <dimen name="text_heading">25sp</dimen>
+</resources>

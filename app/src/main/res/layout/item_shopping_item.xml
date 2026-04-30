@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="@dimen/base_gap_btw_items">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivThumb"
+        android:layout_width="@dimen/shopping_item_img_size"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ImageViewCorner"
+        app:srcCompat="@drawable/thumbnail_default" />
+
+    <TextView
+        android:id="@+id/tvName"
+        style="@style/BaseTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/base_gap_btw_text"
+        android:gravity="center_vertical"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/tvRate"
+        app:layout_constraintEnd_toStartOf="@id/btnBarrier"
+        app:layout_constraintStart_toEndOf="@id/ivThumb"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="Banana" />
+
+    <TextView
+        android:id="@+id/tvRate"
+        style="@style/BaseTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/tvName"
+        app:layout_constraintStart_toStartOf="@id/tvName"
+        app:layout_constraintTop_toBottomOf="@id/tvName"
+        tools:text="Rs. 147" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/btnBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="start"
+        app:constraint_referenced_ids="btnAddToCart,clAddEdit" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAddToCart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add"
+        android:visibility="gone"
+        app:backgroundTint="@color/primary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvName"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clAddEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvName"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/btnReduceQuantity"
+            android:layout_width="@dimen/cart_edit_btn_size"
+            android:layout_height="@dimen/cart_edit_btn_size"
+            android:src="@drawable/ic_minus"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvQuantity"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvQuantity"
+            style="@style/BaseTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:minWidth="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnIncreaseQuantity"
+            app:layout_constraintStart_toEndOf="@id/btnReduceQuantity"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="1" />
+
+        <ImageView
+            android:id="@+id/btnIncreaseQuantity"
+            android:layout_width="@dimen/cart_edit_btn_size"
+            android:layout_height="@dimen/cart_edit_btn_size"
+            android:src="@drawable/ic_add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvQuantity"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
